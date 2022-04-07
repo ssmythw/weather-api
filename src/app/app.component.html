@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="data">
+    <h1>Real Time Weather Data</h1>
+    <p>Retrieve instant, accurate weather data for any location</p>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <input
+        ngModel
+        type="text"
+        name="postalCode"
+        placeholder="Postal Code or city ..."
+      />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <hr />
+
+    <div>
+      <h1>Location: {{ location }}</h1>
+      <div class="flex">
+        <div class="flexColumn">
+          <h5>{{ condition }}</h5>
+          <div class="imgContainer">
+            <img src="{{ conditionImg }}" alt="" />
+          </div>
+        </div>
+        <div class="flexColumn">
+          <h5>Temperature</h5>
+          <h3>{{ celcius }} ℃</h3>
+        </div>
+        <div>
+          <p>Wind: {{ wind_kph }}</p>
+          <p>Precipitation: {{ precip_mm }}</p>
+          <p>Pressure: {{ pressure_mb }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
